@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { M_PLUS_Rounded_1c } from "next/font/google";
+import { ThemeProvider } from "./context/theme-provider";
+import { Header } from "./components/header";
 import "./globals.css";
 
 const Mplus = M_PLUS_Rounded_1c({
@@ -21,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${Mplus.variable} antialiased`}>{children}</body>
+      <body className={`${Mplus.variable} antialiased`}>
+        <ThemeProvider>
+          <Header />
+          <main className="container">{children}</main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
