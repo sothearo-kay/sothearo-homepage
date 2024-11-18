@@ -1,10 +1,24 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { useTheme } from "../context/theme-provider";
 
 export const ToggleSwitch: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div
@@ -13,8 +27,8 @@ export const ToggleSwitch: React.FC = () => {
       onClick={toggleTheme}
     >
       <motion.span
-        className="inline-block h-5 w-5 rounded-full bg-background"
         layout
+        className="inline-block h-5 w-5 rounded-full bg-background"
       ></motion.span>
     </div>
   );

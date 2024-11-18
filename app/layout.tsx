@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { M_PLUS_Rounded_1c } from "next/font/google";
-import { ThemeProvider } from "./context/theme-provider";
+import { ThemeProvider } from "next-themes";
 import { Header } from "./components/header";
 import "./globals.css";
 
@@ -22,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${Mplus.variable} antialiased`}>
-        <ThemeProvider>
+        <ThemeProvider attribute="class">
           <Header />
           <main className="container">{children}</main>
         </ThemeProvider>
