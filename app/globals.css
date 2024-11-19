@@ -3,21 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f2f1;
+  --foreground: #181818;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #09090b;
+  --foreground: #eaeaea;
 }
 
 html,
 body {
   color: var(--foreground);
   background: var(--background);
+  min-height: 100vh;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
 }

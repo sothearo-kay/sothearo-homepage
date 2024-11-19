@@ -14,9 +14,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        mplus: ["var(--font-m-plus)", "sans-serif"],
+      },
       container: {
         center: true,
         padding: "2rem",
+      },
+      screens: {
+        xl: "64rem",
       },
     },
   },
