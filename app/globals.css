@@ -5,6 +5,8 @@
 :root {
   --gray-200: #e4e4e7;
   --gray-300: #d4d4d8;
+  --gray-400: #a1a1aa;
+  --gray-600: #52525b;
   --gray-700: #3f3f46;
   --gray-800: #27272a;
 }
@@ -12,11 +14,15 @@
 .light {
   --background: #f4f2f1;
   --foreground: #181818;
+  --link-background: #000;
+  --link-hover: #2dd4bf;
 }
 
 .dark {
   --background: #09090b;
   --foreground: #eaeaea;
+  --link-background: #fff;
+  --link-hover: #805ad5;
 }
 
 html,
@@ -30,4 +36,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .container {
+    width: calc(100% - 4rem);
+  }
 }

@@ -13,6 +13,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "link-background": "var(--link-background)",
+        "link-hover": "var(--link-hover)",
         gray: {
           200: "var(--gray-200)",
           300: "var(--gray-300)",
@@ -25,9 +27,8 @@ export default {
       },
       container: {
         center: true,
-        padding: "2rem",
         screens: {
-          lg: "60rem",
+          lg: "58rem",
         },
       },
     },

@@ -4,3 +4,4 @@ export { Github } from "./github";
 export { Linkedin } from "./linkedin";
 export { Facebook } from "./facebook";
 export { Download } from "./download";
+export { ArrowRightUp } from "./arrowRightUp";

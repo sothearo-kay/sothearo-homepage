@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, Fragment, HtmlHTMLAttributes } from "react";
+import { useRef, useState, Fragment, HtmlHTMLAttributes } from "react";
 import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
 import usePreviousValue from "@/hooks/usePreviousValue";
-import useMeasure from "@/hooks/useMeasure";
 
 interface TabItem<T> {
   name: string;
@@ -17,19 +16,25 @@ interface TabsProps<T> {
 }
 
 export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
-  const [ref, { height }] = useMeasure();
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const panelContainerRef = useRef<HTMLDivElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState(1);
   const prevIndex = usePreviousValue(selectedIndex) || 0;
   const direction = selectedIndex > prevIndex ? 1 : -1;
 
+  const selectedTab = tabItems[selectedIndex];
+
   return (
     <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-      <TabList className="flex rounded-lg bg-gray-200 p-1 dark:bg-gray-800 [&>*]:flex-1">
+      <TabList className="flex gap-1 rounded-lg bg-gray-200 p-1 dark:bg-gray-800 [&>*]:flex-1">
         {tabItems.map(({ name }) => (
           <Tab key={name} as={Fragment}>
             {({ selected }) => (
-              <button className="relative rounded-md py-2 text-sm font-medium flex-center focus:outline-none">
-                <span className="relative z-10">{name}</span>
+              <button
+                className={`${!selected ? "hover:bg-[#fffa] dark:hover:bg-[#000a]" : ""} relative rounded-md py-2 font-medium transition-[background-color] duration-150 flex-center focus:outline-none`}
+              >
+                <span className="relative z-10 font-mplus font-medium">
+                  {name}
+                </span>
                 {selected && <Background layoutId="background" />}
               </button>
             )}
@@ -37,31 +42,22 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
         ))}
       </TabList>
 
-      <TabPanels
-        className="relative overflow-hidden"
-        style={{ ...(height !== 0 && { height: `${height + 8}px` }) }}
-      >
+      <TabPanels ref={panelContainerRef} className="relative">
         <AnimatePresence initial={false} custom={direction}>
-          {tabItems.map(
-            ({ content }, idx) =>
-              selectedIndex === idx && (
-                <TabPanel
-                  ref={ref}
-                  key={idx}
-                  as={motion.div}
-                  variants={tabPanelVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  custom={direction}
-                  transition={{ type: "tween", duration: 0.5 }}
-                  className="absolute top-2 max-h-min w-full"
-                  static // tells headless ui to delegate mount/unmount to us
-                >
-                  <div className="overflow-hidden">{children(content)}</div>
-                </TabPanel>
-              ),
-          )}
+          <TabPanel
+            key={selectedIndex}
+            as={motion.div}
+            variants={tabPanelVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            custom={direction}
+            transition={{ type: "tween", duration: 0.5 }}
+            className="absolute top-2.5 max-h-min w-full"
+            static // tells headless ui to delegate mount/unmount to us
+          >
+            {children(selectedTab!.content)}
+          </TabPanel>
         </AnimatePresence>
       </TabPanels>
     </TabGroup>
@@ -71,7 +67,7 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
 function Background(props: HtmlHTMLAttributes<HTMLDivElement> & MotionProps) {
   return (
     <motion.div
-      className="absolute inset-0 rounded-md bg-gray-300"
+      className="absolute inset-0 rounded-md bg-gray-300 dark:bg-gray-700"
       {...props}
     ></motion.div>
   );
