@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="font-mplus sticky top-0 z-10 mb-10 backdrop-blur-lg">
+    <header className="sticky top-0 z-10 font-mplus backdrop-blur-lg">
       <div className="container flex min-h-[60px] items-center py-4">
         <nav className="flex-1">
           <ul className="flex items-center gap-8">

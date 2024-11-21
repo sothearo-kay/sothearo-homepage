@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 :root {
+  --gray-200: #e4e4e7;
+  --gray-300: #d4d4d8;
+  --gray-700: #3f3f46;
+  --gray-800: #27272a;
+}
+
+.light {
   --background: #f4f2f1;
   --foreground: #181818;
 }

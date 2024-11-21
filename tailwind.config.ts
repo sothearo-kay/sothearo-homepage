@@ -13,6 +13,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gray: {
+          200: "var(--gray-200)",
+          300: "var(--gray-300)",
+          700: "var(--gray-700)",
+          800: "var(--gray-800)",
+        },
       },
       fontFamily: {
         mplus: ["var(--font-m-plus)", "sans-serif"],
@@ -20,9 +26,9 @@ export default {
       container: {
         center: true,
         padding: "2rem",
-      },
-      screens: {
-        xl: "64rem",
+        screens: {
+          lg: "60rem",
+        },
       },
     },
   },

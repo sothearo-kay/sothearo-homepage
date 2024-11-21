@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${Mplus.variable} transition-colors duration-[250ms]`}>
+      <body
+        className={`${Mplus.variable} transition-[color,background-color] duration-[250ms]`}
+      >
         <ThemeProvider attribute="class">
           <Header />
           <PageTransition
@@ -33,7 +35,7 @@ export default function RootLayout({
             animate="visible"
             exit="exit"
             transition={{ type: "spring", stiffness: 120, damping: 20 }}
-            className="container"
+            className="container py-12"
           >
             {children}
           </PageTransition>
