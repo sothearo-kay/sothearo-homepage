@@ -4,7 +4,7 @@ import { ExperienceTabs } from "@/components/ui/experience-tabs";
 
 export default function Home() {
   return (
-    <div>
+    <div className="space-y-12">
       {/* about me */}
       <div className="flex items-center">
         <div className="flex-1">
@@ -23,12 +23,10 @@ export default function Home() {
       </div>
 
       {/* work / education */}
-      <div className="mt-12">
-        <ExperienceTabs />
-      </div>
+      <ExperienceTabs />
 
       {/* projects -> see more */}
-      <div></div>
+      <div className="h-[200px] bg-gray-200 dark:bg-gray-800"></div>
     </div>
   );
 }

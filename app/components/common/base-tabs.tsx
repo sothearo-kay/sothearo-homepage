@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState, Fragment, HtmlHTMLAttributes } from "react";
+import { useState, Fragment, HtmlHTMLAttributes } from "react";
 import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
+import useMeasure from "@/hooks/useMeasure";
 import usePreviousValue from "@/hooks/usePreviousValue";
 
 interface TabItem<T> {
@@ -16,12 +17,10 @@ interface TabsProps<T> {
 }
 
 export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
-  const panelContainerRef = useRef<HTMLDivElement>(null);
+  const [targetRef, { height }] = useMeasure();
   const [selectedIndex, setSelectedIndex] = useState(1);
   const prevIndex = usePreviousValue(selectedIndex) || 0;
   const direction = selectedIndex > prevIndex ? 1 : -1;
-
-  const selectedTab = tabItems[selectedIndex];
 
   return (
     <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
@@ -42,23 +41,34 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
         ))}
       </TabList>
 
-      <TabPanels ref={panelContainerRef} className="relative">
-        <AnimatePresence initial={false} custom={direction}>
-          <TabPanel
-            key={selectedIndex}
-            as={motion.div}
-            variants={tabPanelVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            custom={direction}
-            transition={{ type: "tween", duration: 0.5 }}
-            className="absolute top-2.5 max-h-min w-full"
-            static // tells headless ui to delegate mount/unmount to us
-          >
-            {children(selectedTab!.content)}
-          </TabPanel>
-        </AnimatePresence>
+      <TabPanels
+        as={motion.div}
+        animate={{ height: height || "auto" }}
+        className="relative mt-2.5 overflow-hidden"
+      >
+        <div ref={targetRef} className="relative">
+          <AnimatePresence initial={false} custom={direction} mode="popLayout">
+            {tabItems.map(
+              ({ content }, index) =>
+                selectedIndex === index && (
+                  <TabPanel
+                    key={index}
+                    as={motion.div}
+                    variants={tabPanelVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    custom={direction}
+                    transition={{ type: "tween", duration: 0.5 }}
+                    className="max-h-min w-full"
+                    static // tells headless ui to delegate mount/unmount to us
+                  >
+                    {children(content)}
+                  </TabPanel>
+                ),
+            )}
+          </AnimatePresence>
+        </div>
       </TabPanels>
     </TabGroup>
   );

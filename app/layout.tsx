@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${Mplus.variable} flex flex-col transition-[color,background-color] duration-[250ms]`}
+        className={`${Mplus.variable} transition-[color,background-color] duration-[250ms]`}
       >
         <ThemeProvider attribute="class">
           <Header />
@@ -35,7 +35,7 @@ export default function RootLayout({
             animate="visible"
             exit="exit"
             transition={{ type: "spring", stiffness: 120, damping: 20 }}
-            className="container flex-1 overflow-hidden py-12"
+            className="container py-12"
           >
             {children}
           </PageTransition>
