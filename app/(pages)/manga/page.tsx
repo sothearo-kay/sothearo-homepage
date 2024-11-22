@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Heading } from "@/components/ui/heading";
 
 export const metadata: Metadata = {
   title: "Manga",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 export default function Manga() {
   return (
     <div>
-      <p>Manga</p>
+      <Heading>Manga</Heading>
     </div>
   );
 }

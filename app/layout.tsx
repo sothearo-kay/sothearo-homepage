@@ -35,7 +35,7 @@ export default function RootLayout({
             animate="visible"
             exit="exit"
             transition={{ type: "spring", stiffness: 120, damping: 20 }}
-            className="container py-12"
+            className="container py-16 !will-change-[transform,opacity]"
           >
             {children}
           </PageTransition>

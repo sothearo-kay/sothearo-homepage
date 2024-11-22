@@ -28,7 +28,7 @@ export default {
       container: {
         center: true,
         screens: {
-          lg: "58rem",
+          lg: "50rem",
         },
       },
     },

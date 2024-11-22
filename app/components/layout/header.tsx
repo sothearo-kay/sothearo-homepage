@@ -6,7 +6,6 @@ export const Header: React.FC = () => {
     { path: "/", label: "home" },
     { path: "/projects", label: "projects" },
     { path: "/manga", label: "manga" },
-    { path: "/contact", label: "contact" },
   ];
 
   return (
