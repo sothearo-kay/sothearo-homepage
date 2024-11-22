@@ -3,8 +3,8 @@
 import { useState, Fragment, HtmlHTMLAttributes } from "react";
 import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
-import useMeasure from "@/hooks/useMeasure";
-import usePreviousValue from "@/hooks/usePreviousValue";
+import { useMeasure } from "@/hooks/useMeasure";
+import { usePreviousState } from "@/hooks/usePreviousState";
 
 interface TabItem<T> {
   name: string;
@@ -17,9 +17,9 @@ interface TabsProps<T> {
 }
 
 export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
-  const [targetRef, { height }] = useMeasure();
+  const [tabPanelRef, { height }] = useMeasure();
   const [selectedIndex, setSelectedIndex] = useState(1);
-  const prevIndex = usePreviousValue(selectedIndex) || 0;
+  const prevIndex = usePreviousState(selectedIndex) || -1;
   const direction = selectedIndex > prevIndex ? 1 : -1;
 
   return (
@@ -44,9 +44,10 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
       <TabPanels
         as={motion.div}
         animate={{ height: height || "auto" }}
+        transition={{ type: "tween", duration: 0.25 }}
         className="relative mt-2.5 overflow-hidden"
       >
-        <div ref={targetRef} className="relative">
+        <div ref={tabPanelRef}>
           <AnimatePresence initial={false} custom={direction} mode="popLayout">
             {tabItems.map(
               ({ content }, index) =>
@@ -84,7 +85,7 @@ function Background(props: HtmlHTMLAttributes<HTMLDivElement> & MotionProps) {
 }
 
 const tabPanelVariants = {
-  hidden: (direction: number) => ({ x: direction * 100 + "%" }),
-  visible: { x: 0 },
-  exit: (direction: number) => ({ x: direction * -100 + "%" }),
+  hidden: (direction: number) => ({ x: direction * 100 + "%", opacity: 0 }),
+  visible: { x: 0, opacity: 1 },
+  exit: (direction: number) => ({ x: direction * -100 + "%", opacity: 0 }),
 };

@@ -4,7 +4,7 @@ interface dimensions {
   height: number;
 }
 
-export default function useMeasure() {
+export function useMeasure() {
   const ref = useRef<HTMLDivElement | null>(null);
   const [dimensions, setDimensions] = useState<dimensions>({
     width: 0,
