@@ -10,14 +10,11 @@ export default function Home() {
       {/* about me */}
       <div className="flex items-center gap-16 max-sm:flex-col">
         <div className="flex-1 max-sm:order-1">
-          <h1 className="mb-5 font-mplus text-4xl font-bold">Kay Sothearo</h1>
-          <p>A frontend developer based in Phnom Penh 🇰🇭</p>
-          <p className="mt-2.5 text-balance">
-            I am passionate about reading, especially graphic novels such as
-            manga and manhwa. I find great joy in coding, embracing the
-            challenge of creating intricate user interfaces, and I thrive on
-            learning through insightful articles.
-          </p>
+          <h1 className="mb-5 font-mplus text-4xl font-bold capitalize">
+            {bio.title}
+          </h1>
+          <p>{bio.subtitle}</p>
+          <p className="mt-2.5 text-balance">{bio.description}</p>
           <div className="mt-5 flex items-center gap-6">
             {/* resume */}
             <ResumeLink />
@@ -40,3 +37,9 @@ export default function Home() {
     </div>
   );
 }
+
+const bio = {
+  title: "kay sothearo",
+  subtitle: "A frontend developer based in Phnom Penh 🇰🇭",
+  description: `I am passionate about reading, especially graphic novels such as manga and manhwa. I find great joy in coding, embracing the challenge of creating intricate user interfaces, and I thrive on learning through insightful articles.`,
+};

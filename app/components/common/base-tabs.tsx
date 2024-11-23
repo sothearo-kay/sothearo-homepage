@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, Fragment, HtmlHTMLAttributes } from "react";
-import { AnimatePresence, motion, MotionProps } from "framer-motion";
+import { useState, Fragment } from "react";
+import { AnimatePresence, motion, type MotionProps } from "framer-motion";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
 import { useMeasure } from "@/hooks/useMeasure";
 import { usePreviousState } from "@/hooks/usePreviousState";
@@ -75,7 +75,7 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
   );
 };
 
-function Background(props: HtmlHTMLAttributes<HTMLDivElement> & MotionProps) {
+function Background(props: React.ComponentProps<"div"> & MotionProps) {
   return (
     <motion.div
       className="absolute inset-0 rounded-md bg-gray-300 dark:bg-gray-700"

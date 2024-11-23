@@ -13,6 +13,7 @@ export const Avatar: React.FC<AvatarProps> = ({ src, alt }) => {
         alt={alt}
         width={120}
         height={120}
+        priority
         className="aspect-square rounded-md"
       />
     </div>
