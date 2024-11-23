@@ -6,7 +6,7 @@ export const ResumeLink: React.FC = () => {
     <Link
       href="/resume.pdf"
       target="_blank"
-      className="gap-2 rounded border border-gray-300 px-3 py-2 transition-[background-color] duration-150 flex-center hover:bg-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+      className="hover:bg-common-bg border-common-border gap-2 rounded border px-3 py-2 transition-[background-color] duration-150 flex-center"
       download
     >
       <span className="font-mplus font-medium">Resume</span>

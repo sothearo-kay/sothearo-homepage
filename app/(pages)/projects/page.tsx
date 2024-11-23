@@ -12,3 +12,16 @@ export default function Projects() {
     </div>
   );
 }
+
+const projectList = [
+  {
+    title: "Netflix Clone",
+    cover: "/images/projects/netflix-clone.jpg",
+    link: "https://github.com/hotaroo-dev/netflix-clone",
+  },
+  {
+    title: "Tolv",
+    cover: "/images/projects/tolv.jpg",
+    link: "https://github.com/hotaroo-dev/tolv",
+  },
+];

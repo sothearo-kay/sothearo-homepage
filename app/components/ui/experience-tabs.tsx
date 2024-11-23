@@ -40,7 +40,8 @@ function TabContent({ content }: { content: contentType }) {
             />
           </div>
 
-          <div className="ml-5 border-l border-gray-300 py-4 pl-10 group-first:pt-0 dark:border-gray-700">
+          {/* prettier-ignore */}
+          <div className="ml-5 border-l border-gray-300 py-4 pl-10 group-first:pt-0 dark:border-gray-700 [&>*:last-child]:mb-0">
             <time className="text-sm text-gray-600 dark:text-gray-400">
               {experience.duration}
             </time>
@@ -49,9 +50,17 @@ function TabContent({ content }: { content: contentType }) {
               {experience.position}
             </p>
 
-            {experience.links && experience.links.length > 0 && (
-              <ul className="mt-2 flex gap-4">
-                {experience.links.map((link, idx) => (
+            {"highlights" in experience && experience.highlights!.length > 0 && (
+              <ul className="my-1 list-inside list-disc">
+                {experience.highlights!.map((highlight, idx) => (
+                  <li key={idx}>{highlight}</li>
+                ))}
+              </ul>
+            )}
+
+            {"links" in experience && experience.links!.length > 0 && (
+              <ul className="my-2 flex flex-wrap gap-2">
+                {experience.links!.map((link, idx) => (
                   <li key={idx}>
                     <Link
                       href={link.url}
@@ -109,6 +118,7 @@ const experiences = [
         organization: "Sovannaphumi School",
         logo: "/logos/sps.png",
         position: "High School Diploma",
+        highlights: ["Enjoy solving hard problems in math"],
       },
     ],
   },

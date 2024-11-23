@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { FrozenRouter } from "./frozen-router";
 
-interface LayoutTransitionProps {
+interface PageTransitionProps {
   children: React.ReactNode;
   className?: React.ComponentProps<typeof motion.main>["className"];
   style?: React.ComponentProps<typeof motion.main>["style"];
@@ -15,7 +15,7 @@ interface LayoutTransitionProps {
   transition: React.ComponentProps<typeof motion.main>["transition"];
 }
 
-export const PageTransition: React.FC<LayoutTransitionProps> = ({
+export const PageTransition: React.FC<PageTransitionProps> = ({
   children,
   ...pageProps
 }) => {

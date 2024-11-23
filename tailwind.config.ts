@@ -13,8 +13,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "shadow-color": "var(--shadow-color)",
         "link-background": "var(--link-background)",
         "link-hover": "var(--link-hover)",
+        "common-border": "var(--common-border)",
+        "common-bg": "var(--common-bg)",
         gray: {
           200: "var(--gray-200)",
           300: "var(--gray-300)",
@@ -40,6 +43,11 @@ export default {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+        },
+        ".flex-between": {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
         },
       });
     }),

@@ -20,11 +20,11 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-10 font-mplus">
       <Mask opacity={opacity} />
 
-      <div className="container relative z-[1] flex items-center py-4">
+      <div className="container relative z-[1] flex items-center py-5">
         <nav className="flex-1">
           <ul className="flex items-center gap-8">
             {links.map((link, idx) => (
-              <li key={idx} className="relative overflow-hidden pb-0.5">
+              <li key={idx} className="relative overflow-hidden py-1">
                 <Link href={link.path}>{link.label}</Link>
                 {pathname === link.path && <Underline layoutId="underline" />}
               </li>
@@ -47,13 +47,11 @@ const links = [
 function Mask({ opacity }: { opacity: MotionValue<number> }) {
   return (
     <motion.div
-      className="pointer-events-none absolute inset-0 bg-transparent backdrop-blur-sm"
+      className="pointer-events-none absolute inset-0 bg-transparent backdrop-blur-[3px]"
       style={{
         opacity,
         backgroundSize: "4px 4px",
-        backgroundImage: `
-          radial-gradient(transparent 1px, var(--background) 1px)
-        `,
+        backgroundImage: `radial-gradient(transparent 1px, var(--background) 1px)`,
       }}
     ></motion.div>
   );

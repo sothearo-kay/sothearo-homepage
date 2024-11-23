@@ -14,15 +14,21 @@
 .light {
   --background: #f4f2f1;
   --foreground: #181818;
+  --shadow-color: #0004;
   --link-background: #000;
   --link-hover: #2dd4bf;
+  --common-border: var(--gray-300);
+  --common-bg: var(--gray-200);
 }
 
 .dark {
   --background: #09090b;
   --foreground: #eaeaea;
+  --shadow-color: #000a;
   --link-background: #fff;
   --link-hover: #805ad5;
+  --common-border: var(--gray-700);
+  --common-bg: var(--gray-800);
 }
 
 html,

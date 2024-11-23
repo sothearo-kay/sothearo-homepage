@@ -24,7 +24,7 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
 
   return (
     <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-      <TabList className="flex gap-1 rounded-lg bg-gray-200 p-1 dark:bg-gray-800 [&>*]:flex-1">
+      <TabList className="bg-common-bg flex gap-1 rounded-lg p-1 [&>*]:flex-1">
         {tabItems.map(({ name }) => (
           <Tab key={name} as={Fragment}>
             {({ selected }) => (
@@ -78,7 +78,7 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
 function Background(props: React.ComponentProps<"div"> & MotionProps) {
   return (
     <motion.div
-      className="absolute inset-0 rounded-md bg-gray-300 dark:bg-gray-700"
+      className="bg-common-border absolute inset-0 rounded-md"
       {...props}
     ></motion.div>
   );

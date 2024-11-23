@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
 
 export const ToggleSwitch: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -20,14 +19,12 @@ export const ToggleSwitch: React.FC = () => {
 
   return (
     <div
-      className="flex w-[60px] cursor-pointer items-center rounded-full border border-gray-300 bg-gray-200 p-1 dark:border-gray-700 dark:bg-gray-800"
-      style={{ justifyContent: theme === "dark" ? "flex-end" : "flex-start" }}
+      className="shadow-shadow-color border-common-border bg-common-bg flex w-[60px] cursor-pointer items-center rounded-full border p-1 shadow-inner"
       onClick={toggleTheme}
     >
-      <motion.span
-        layout
-        className="inline-block h-5 w-5 rounded-full bg-white"
-      ></motion.span>
+      <span
+        className={`${theme === "dark" ? "translate-x-[30px]" : ""} inline-block h-5 w-5 rounded-full bg-white transition-transform duration-300`}
+      ></span>
     </div>
   );
 };

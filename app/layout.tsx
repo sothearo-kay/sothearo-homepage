@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { M_PLUS_Rounded_1c } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Header } from "./components/layout/header";
+import { Footer } from "./components/layout/footer";
 import { PageTransition } from "./components/layout/page-transition";
 import "./globals.css";
 
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${Mplus.variable} transition-[color,background-color] duration-[250ms]`}
+        className={`${Mplus.variable} antialiased transition-colors duration-500`}
       >
         <ThemeProvider attribute="class">
           <Header />
@@ -39,6 +40,7 @@ export default function RootLayout({
           >
             {children}
           </PageTransition>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
