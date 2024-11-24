@@ -14,8 +14,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "shadow-color": "var(--shadow-color)",
+        "link-text": "var(--link-text)",
         "link-background": "var(--link-background)",
         "link-hover": "var(--link-hover)",
+        "card-link-background": "var(--card-link-background)",
+        "card-link-hover": "var(--card-link-hover)",
+        "common-text": "var(--common-text)",
         "common-border": "var(--common-border)",
         "common-bg": "var(--common-bg)",
         gray: {

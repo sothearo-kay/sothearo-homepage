@@ -1,16 +1,16 @@
-import Link from "next/link";
 import * as Icons from "@/components/icons";
+import { ExternalLink } from "./external-link";
 
 export const SocialLinks: React.FC = () => {
   return (
     <ul className="flex items-center gap-6">
       {socialLinks.map((link, idx) => (
         <li key={idx}>
-          <Link href={link.url} target="_blank" rel="noreferrer">
+          <ExternalLink href={link.url}>
             <span className="block rounded-full border border-dashed border-transparent p-2 transition-[border-color] duration-150 hover:border-foreground">
               {link.icon}
             </span>
-          </Link>
+          </ExternalLink>
         </li>
       ))}
     </ul>

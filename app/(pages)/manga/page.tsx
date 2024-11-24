@@ -10,7 +10,6 @@ export default function Manga() {
   return (
     <div className="space-y-12">
       <Heading>Manga</Heading>
-
       <div className="grid grid-cols-2 gap-12">
         {mangaList.map((manga, idx) => (
           <MangaCard key={idx} title={manga.title} cover={manga.cover} />
