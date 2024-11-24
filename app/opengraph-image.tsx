@@ -1,12 +1,12 @@
 import { ImageResponse } from "next/og";
+import { join } from "node:path";
+import { readFile } from "node:fs/promises";
 
-export const runtime = "edge";
+export default async function Image() {
+  const logoData = await readFile(join(process.cwd(), "logo.png"));
+  const logoSrc = Uint8Array.from(logoData).buffer;
 
-export default async function OpenGraphImage(): Promise<ImageResponse> {
-  const logoSrc = await fetch(new URL("./logo.png", import.meta.url)).then(
-    (res) => res.arrayBuffer(),
-  );
-
+  /* eslint @next/next/no-img-element: "off", jsx-a11y/alt-text: "off" */
   return new ImageResponse(
     (
       <div
@@ -16,7 +16,7 @@ export default async function OpenGraphImage(): Promise<ImageResponse> {
           justifyContent: "center",
         }}
       >
-        <img src={logoSrc as any} height="100" />
+        <img src={logoSrc as unknown as string} height="100" />
       </div>
     ),
   );

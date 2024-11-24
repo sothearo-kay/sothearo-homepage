@@ -14,6 +14,7 @@ const Mplus = M_PLUS_Rounded_1c({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sothearo.dev"),
   title: { template: "Sothearo - %s", default: "Sothearo - Homepage" },
   description: `Discover my portfolio, an engaging showcase of my projects alongside the incredible manga that inspires my creativity and passion for storytelling.`,
 };
