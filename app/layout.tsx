@@ -15,7 +15,7 @@ const Mplus = M_PLUS_Rounded_1c({
 
 export const metadata: Metadata = {
   title: { template: "Sothearo - %s", default: "Sothearo - Homepage" },
-  description: "",
+  description: `Discover my portfolio, an engaging showcase of my projects alongside the incredible manga that inspires my creativity and passion for storytelling.`,
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
             animate="visible"
             exit="exit"
             transition={{ type: "spring", stiffness: 120, damping: 20 }}
-            className="container py-16 !will-change-[transform,opacity]"
+            className="container py-10 !will-change-[transform,opacity]"
           >
             {children}
           </PageTransition>

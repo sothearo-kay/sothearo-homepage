@@ -4,6 +4,7 @@ import { MangaCard } from "@/components/ui/manga-card";
 
 export const metadata: Metadata = {
   title: "Manga",
+  description: `Dive into the world of manga that inspires my creativity. This page showcases the manga I’ve read and what I've learned from it.`,
 };
 
 export default function Manga() {

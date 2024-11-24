@@ -7,6 +7,7 @@ const GITHUB_BASE_URL = "https://github.com/hotaroo-dev/";
 
 export const metadata: Metadata = {
   title: "Projects",
+  description: `Take a peek at my exciting range of projects where creativity meets functionality! Whether it's web applications or design concepts, each project reflects my passion for quality and innovation. I hope you find it informative.`,
 };
 
 export default function Projects() {
