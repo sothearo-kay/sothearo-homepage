@@ -1,7 +1,7 @@
 import { languageColor } from "./languageColor";
 
 interface ILanguageData {
-  [key: string]: string;
+  [repoId: string]: string;
   percentage: string;
   color: string;
 }
@@ -16,12 +16,12 @@ export interface IRepository {
 }
 
 export async function fetchRepository(
-  { key, title }: { key: string; title: string },
+  { title, repoId }: { repoId: string; title: string },
   user: string = "hotaroo-dev",
 ): Promise<IRepository> {
   const [repoData, languageData] = await Promise.all([
-    $fetch<RepoResponse>(`https://api.github.com/repos/${user}/${key}`),
-    fetchLanguages(key, user),
+    $fetch<RepoResponse>(`https://api.github.com/repos/${user}/${repoId}`),
+    fetchLanguages(repoId, user),
   ]);
 
   return {
@@ -35,11 +35,11 @@ export async function fetchRepository(
 }
 
 async function fetchLanguages(
-  key: string,
+  repoId: string,
   user: string,
 ): Promise<Record<string, ILanguageData>> {
   const data = await $fetch<Record<string, number>>(
-    `https://api.github.com/repos/${user}/${key}/languages`,
+    `https://api.github.com/repos/${user}/${repoId}/languages`,
   );
 
   // The API returns an object where keys are languages and values are byte counts

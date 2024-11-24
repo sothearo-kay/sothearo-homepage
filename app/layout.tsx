@@ -31,7 +31,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <Header />
           <PageTransition
-            variants={layoutVariants}
+            variants={pageVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -47,7 +47,7 @@ export default function RootLayout({
   );
 }
 
-const layoutVariants = {
+const pageVariants = {
   hidden: { opacity: 0, y: -20 },
   visible: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: 20, transition: { type: "tween", duration: 0.25 } },

@@ -14,7 +14,7 @@ const mangaDexImageLoader = ({ src }: ImageLoaderProps) => {
 
 export const MangaCard: React.FC<MangaCardProps> = ({ title, cover }) => {
   return (
-    <div className="flex flex-col gap-1 odd:ml-auto even:mr-auto">
+    <div className="flex flex-col gap-1">
       <Image
         loader={mangaDexImageLoader}
         src={cover}
@@ -22,10 +22,7 @@ export const MangaCard: React.FC<MangaCardProps> = ({ title, cover }) => {
         width={180}
         height={270}
         priority
-        className="aspect-[2/3] rounded-md"
-        style={{
-          boxShadow: `rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px`,
-        }}
+        className="shadow-card aspect-[2/3] w-full rounded-md object-cover"
       />
       <CardTitle>{title}</CardTitle>
     </div>

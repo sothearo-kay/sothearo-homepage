@@ -29,7 +29,7 @@ export const RepoCard: React.FC<RepoCardProps> = ({ repository }) => {
           </div>
         </div>
 
-        <Paragraph className="text-common-text my-2 text-sm">
+        <Paragraph className="text-common-text my-2.5 text-sm">
           {repository.description}
         </Paragraph>
 

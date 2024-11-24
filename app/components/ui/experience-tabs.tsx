@@ -66,7 +66,7 @@ function TabContent({ content }: { content: contentType }) {
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="group/link gap-2 rounded-md bg-card-link-background px-2 py-0.5 text-background transition-colors duration-150 flex-center hover:text-card-link-hover"
+                      className="group/link gap-2 rounded-md bg-panel-link-background px-2 py-0.5 text-background transition-colors duration-150 flex-center hover:text-panel-link-hover"
                     >
                       <span>{link.label}</span>
                       <Icons.ArrowRightUp className="h-4 w-4 transition-transform duration-150 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-1" />

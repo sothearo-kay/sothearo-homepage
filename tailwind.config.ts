@@ -17,8 +17,9 @@ export default {
         "link-text": "var(--link-text)",
         "link-background": "var(--link-background)",
         "link-hover": "var(--link-hover)",
-        "card-link-background": "var(--card-link-background)",
         "card-link-hover": "var(--card-link-hover)",
+        "panel-link-background": "var(--panel-link-background)",
+        "panel-link-hover": "var(--panel-link-hover)",
         "common-text": "var(--common-text)",
         "common-border": "var(--common-border)",
         "common-bg": "var(--common-bg)",
@@ -31,6 +32,9 @@ export default {
       },
       fontFamily: {
         mplus: ["var(--font-m-plus)", "sans-serif"],
+      },
+      boxShadow: {
+        card: "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
       },
       container: {
         center: true,
