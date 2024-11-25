@@ -20,6 +20,7 @@ export const ToggleSwitch: React.FC = () => {
 
   return (
     <button
+      aria-label="Toggle theme"
       className="relative h-10 w-10 rounded-md border border-common-border transition-[background-color,border-color] duration-[.15s,.5s] hover:bg-common-bg"
       onClick={toggleTheme}
     >
@@ -95,7 +96,7 @@ const draw = {
     opacity: 1,
     transition: {
       pathLength: { type: "spring", duration: 1, bounce: 0, delay: 0.25 },
-      opacity: { duration: 1 },
+      opacity: { duration: 0.5 },
     },
   },
   exit: {
