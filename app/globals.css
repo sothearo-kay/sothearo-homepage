@@ -60,6 +60,6 @@ body {
 
 @layer components {
   .container {
-    width: calc(100% - 4rem);
+    @apply w-[calc(100%-4rem)] max-sm:w-[calc(100%-2rem)];
   }
 }
