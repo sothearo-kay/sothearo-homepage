@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Heading } from "@/components/ui/heading";
-import { MangaCard } from "@/components/ui/manga-card";
+import { Heading } from "@/app/components/ui/heading";
+import { MangaCard } from "@/app/components/ui/manga-card";
 
 export const metadata: Metadata = {
   title: "Manga",

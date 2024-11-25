@@ -1,8 +1,8 @@
-import * as Icons from "@/components/icons";
+import * as Icons from "@/app/components/icons";
 import { ExternalLink } from "./external-link";
 import { Paragraph } from "./paragraph";
 import { CardTitle } from "./card-title";
-import { IRepository } from "@/utils/fetch";
+import { IRepository } from "@/app/utils/fetch";
 
 interface RepoCardProps {
   repository: IRepository;

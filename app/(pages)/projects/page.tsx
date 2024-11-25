@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Heading } from "@/components/ui/heading";
-import { ProjectCard } from "@/components/ui/project-card";
+import { Heading } from "@/app/components/ui/heading";
+import { ProjectCard } from "@/app/components/ui/project-card";
 
-const COVER_BASE_PATH = "/images/projects/";
+import netflixCover from "@/public/images/projects/netflix-clone.jpg";
+import tolvCover from "@/public/images/projects/tolv.jpg";
+import checkoutCartCover from "@/public/images/projects/checkout-cart.jpg";
+import markdownEditorCover from "@/public/images/projects/markdown-editor.jpg";
+
 const GITHUB_BASE_URL = "https://github.com/hotaroo-dev/";
 
 export const metadata: Metadata = {
@@ -19,7 +23,7 @@ export default function Projects() {
           <ProjectCard
             key={idx}
             title={project.title}
-            cover={`${COVER_BASE_PATH}${project.repoId}.jpg`}
+            cover={project.cover}
             link={`${GITHUB_BASE_URL}${project.repoId}`}
           />
         ))}
@@ -31,18 +35,22 @@ export default function Projects() {
 const projectList = [
   {
     title: "Netflix Clone",
+    cover: netflixCover,
     repoId: "netflix-clone",
   },
   {
     title: "Tolv",
+    cover: tolvCover,
     repoId: "tolv",
   },
   {
     title: "Checkout Cart",
+    cover: checkoutCartCover,
     repoId: "checkout-cart",
   },
   {
     title: "Markdown Editor",
+    cover: markdownEditorCover,
     repoId: "markdown-editor",
   },
 ];

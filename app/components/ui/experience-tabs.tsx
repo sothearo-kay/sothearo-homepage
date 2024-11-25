@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import * as Icons from "@/components/icons";
-import { BaseTabs } from "@/components/common/base-tabs";
+import * as Icons from "@/app/components/icons";
+import { BaseTabs } from "@/app/components/common/base-tabs";
 
 interface ExperienceEntry {
   duration: string;

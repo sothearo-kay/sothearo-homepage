@@ -1,5 +1,5 @@
 import Link from "next/link";
-import * as Icons from "@/components/icons";
+import * as Icons from "@/app/components/icons";
 
 export const ResumeLink: React.FC = () => {
   return (

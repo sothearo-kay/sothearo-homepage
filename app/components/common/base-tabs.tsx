@@ -3,8 +3,8 @@
 import { useState, Fragment } from "react";
 import { AnimatePresence, motion, type MotionProps } from "framer-motion";
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
-import { useMeasure } from "@/hooks/useMeasure";
-import { usePreviousState } from "@/hooks/usePreviousState";
+import { useMeasure } from "@/app/hooks/useMeasure";
+import { usePreviousState } from "@/app/hooks/usePreviousState";
 
 interface TabItem<T> {
   name: string;

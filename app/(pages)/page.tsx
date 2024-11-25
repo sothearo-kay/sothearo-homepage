@@ -1,12 +1,12 @@
-import { ExperienceTabs } from "@/components/ui/experience-tabs";
-import { ResumeLink } from "@/components/ui/resume-link";
-import { SocialLinks } from "@/components/ui/social-links";
-import { LongParagraph } from "@/components/ui/long-paragraph";
-import { Avatar } from "@/components/ui/avatar";
-import { Heading } from "@/components/ui/heading";
-import { RepoCard } from "@/components/ui/repo-card";
-import { SeeMoreLink } from "@/components/ui/seemore-link";
-import { fetchRepository } from "@/utils/fetch";
+import { ExperienceTabs } from "@/app/components/ui/experience-tabs";
+import { ResumeLink } from "@/app/components/ui/resume-link";
+import { SocialLinks } from "@/app/components/ui/social-links";
+import { LongParagraph } from "@/app/components/ui/long-paragraph";
+import { Avatar } from "@/app/components/ui/avatar";
+import { Heading } from "@/app/components/ui/heading";
+import { RepoCard } from "@/app/components/ui/repo-card";
+import { SeeMoreLink } from "@/app/components/ui/seemore-link";
+import { fetchRepository } from "@/app/utils/fetch";
 
 export default async function Home() {
   const repositories = await Promise.all(

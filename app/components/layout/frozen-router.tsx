@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { usePathname } from "next/navigation";
-import { usePreviousValue } from "@/hooks/usePreviousValue";
+import { usePreviousValue } from "@/app/hooks/usePreviousValue";
 
 interface FrozenRouterProps {
   children: React.ReactNode;

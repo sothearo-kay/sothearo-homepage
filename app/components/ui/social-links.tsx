@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import * as Icons from "@/components/icons";
+import * as Icons from "@/app/components/icons";
 import { ExternalLink } from "./external-link";
 
 export const SocialLinks: React.FC = () => {
