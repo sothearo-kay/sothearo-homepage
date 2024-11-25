@@ -7,14 +7,14 @@ interface AvatarProps {
 
 export const Avatar: React.FC<AvatarProps> = ({ src, alt }) => {
   return (
-    <div className="h-32 w-32 rounded-lg border-4 border-common-border">
+    <div className="overflow-hidden rounded-2xl ring-4 ring-common-bg ring-offset-4 ring-offset-background">
       <Image
         src={src}
         alt={alt}
         width={120}
         height={120}
         priority
-        className="aspect-square rounded-md"
+        className="aspect-square"
       />
     </div>
   );

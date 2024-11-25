@@ -1,11 +1,8 @@
-"use client";
-
-import Link from "next/link";
 import * as Icons from "@/app/components/icons";
 
 export const ResumeLink: React.FC = () => {
   return (
-    <Link
+    <a
       download
       href="/resume.pdf"
       target="_blank"
@@ -15,6 +12,6 @@ export const ResumeLink: React.FC = () => {
     >
       <span className="font-mplus font-medium">Resume</span>
       <Icons.Download className="h-6 w-6" />
-    </Link>
+    </a>
   );
 };
