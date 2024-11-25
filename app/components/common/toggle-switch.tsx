@@ -19,7 +19,7 @@ export const ToggleSwitch: React.FC = () => {
 
   return (
     <div
-      className="shadow-shadow-color border-common-border bg-common-bg flex w-[60px] cursor-pointer items-center rounded-full border p-1 shadow-inner"
+      className="flex w-[60px] cursor-pointer items-center rounded-full border border-common-border bg-common-bg p-1 shadow-inner shadow-shadow-color"
       onClick={toggleTheme}
     >
       <span

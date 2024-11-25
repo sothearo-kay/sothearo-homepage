@@ -14,7 +14,7 @@
 .light {
   --background: #f4f2f1;
   --foreground: #181818;
-  --shadow-color: #0004;
+  --shadow-color: #0003;
   --link-text: #fff;
   --link-background: #805ad5;
   --link-hover: #7046d0;
@@ -50,7 +50,10 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
 }

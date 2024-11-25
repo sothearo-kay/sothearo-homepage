@@ -13,11 +13,11 @@ export const RepoCard: React.FC<RepoCardProps> = ({ repository }) => {
 
   return (
     <ExternalLink href={repository.url} className="flex">
-      <div className="border-common-border hover:bg-common-bg flex-1 rounded-lg border p-4 transition-colors duration-150">
+      <div className="flex-1 rounded-lg border border-common-border p-4 transition-colors duration-150 hover:bg-common-bg">
         <div className="flex-between">
           <CardTitle>{repository.title}</CardTitle>
 
-          <div className="text-common-text flex items-center gap-4">
+          <div className="flex items-center gap-4 text-common-text">
             <div className="flex items-center gap-1">
               <Icons.Star className="h-4 w-4" />
               <span className="text-sm">{repository.stars}</span>
@@ -29,7 +29,7 @@ export const RepoCard: React.FC<RepoCardProps> = ({ repository }) => {
           </div>
         </div>
 
-        <Paragraph className="text-common-text my-2.5 text-sm">
+        <Paragraph className="my-2.5 text-sm text-common-text">
           {repository.description}
         </Paragraph>
 

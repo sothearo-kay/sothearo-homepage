@@ -45,7 +45,7 @@ function TabContent({ content }: { content: contentType }) {
             <time className="text-sm text-common-text">
               {experience.duration}
             </time>
-            <h3 className="font-bold">{experience.organization}</h3>
+            <h2 className="font-bold">{experience.organization}</h2>
             <p className="text-common-text">
               {experience.position}
             </p>

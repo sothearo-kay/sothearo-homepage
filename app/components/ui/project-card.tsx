@@ -16,16 +16,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <ExternalLink href={link} className="flex">
-      <div className="border-common-border group flex-1 space-y-2 rounded-lg border p-4">
+      <div className="group flex-1 space-y-2 rounded-lg border border-common-border p-4">
         <Image
           src={cover}
           alt={title}
           width={600}
           height={400}
           priority
-          className="shadow-card aspect-video w-full rounded"
+          className="aspect-video w-full rounded shadow-card"
         />
-        <div className="flex-between group-hover:text-card-link-hover transition-colors duration-150">
+        <div className="transition-colors duration-150 flex-between group-hover:text-card-link-hover">
           <CardTitle>{title}</CardTitle>
           <Icons.ArrowRightUp className="mr-2.5 h-4 w-4 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-1" />
         </div>

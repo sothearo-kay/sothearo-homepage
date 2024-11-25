@@ -7,7 +7,7 @@ interface AvatarProps {
 
 export const Avatar: React.FC<AvatarProps> = ({ src, alt }) => {
   return (
-    <div className="border-common-border h-32 w-32 rounded-lg border-4">
+    <div className="h-32 w-32 rounded-lg border-4 border-common-border">
       <Image
         src={src}
         alt={alt}
