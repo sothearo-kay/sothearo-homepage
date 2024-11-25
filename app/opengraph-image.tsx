@@ -12,6 +12,7 @@ export default async function Image() {
       <div
         style={{
           width: "100%",
+          backgroundColor: "#f4f2f1",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
