@@ -21,7 +21,7 @@ export const ToggleSwitch: React.FC = () => {
   return (
     <button
       aria-label="Toggle theme"
-      className="relative h-10 w-10 rounded-md border border-common-border transition-[background-color,border-color] duration-[.15s,.5s] hover:bg-common-bg"
+      className="relative h-10 w-10 rounded-md border border-common-border bg-background transition-[background-color,border-color] duration-[.15s,.5s] hover:bg-common-bg"
       onClick={toggleTheme}
     >
       <AnimatePresence initial={false}>

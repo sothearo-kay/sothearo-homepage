@@ -60,7 +60,7 @@ function Mask({ opacity }: { opacity: MotionValue<number> }) {
 function Underline(props: React.ComponentProps<"span"> & MotionProps) {
   return (
     <motion.span
-      className="absolute -inset-x-0.5 bottom-1 mx-auto h-0.5 bg-foreground"
+      className="absolute -inset-x-0.5 bottom-1 mx-auto h-0.5 bg-foreground transition-[background-color] duration-500"
       {...props}
     ></motion.span>
   );
