@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import * as Icons from "@/app/components/icons";
 
 export const ResumeLink: React.FC = () => {
   return (
     <Link
+      download
       href="/resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
