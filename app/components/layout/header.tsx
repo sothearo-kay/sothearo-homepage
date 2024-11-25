@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
         <nav className="flex-1">
           <ul className="flex items-center gap-8">
             {links.map((link, idx) => (
-              <li key={idx} className="relative overflow-hidden py-1">
+              <li key={idx} className="relative overflow-hidden py-2">
                 <Link href={link.path}>{link.label}</Link>
                 {pathname === link.path && <Underline layoutId="underline" />}
               </li>
@@ -60,7 +60,7 @@ function Mask({ opacity }: { opacity: MotionValue<number> }) {
 function Underline(props: React.ComponentProps<"span"> & MotionProps) {
   return (
     <motion.span
-      className="absolute -inset-x-0.5 bottom-0 mx-auto h-0.5 bg-foreground"
+      className="absolute -inset-x-0.5 bottom-1 mx-auto h-0.5 bg-foreground"
       {...props}
     ></motion.span>
   );

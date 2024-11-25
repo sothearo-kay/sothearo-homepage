@@ -21,10 +21,11 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
   const [selectedIndex, setSelectedIndex] = useState(1);
   const prevIndex = usePreviousState(selectedIndex) || -1;
   const direction = selectedIndex > prevIndex ? 1 : -1;
+  const selectedTab = tabItems[selectedIndex];
 
   return (
     <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-      <TabList className="flex gap-1 rounded-lg bg-common-bg p-1 [&>*]:flex-1">
+      <TabList className="flex gap-1 rounded-lg bg-common-bg p-1 transition-[background-color] duration-500 [&>*]:flex-1">
         {tabItems.map(({ name }) => (
           <Tab key={name} as={Fragment}>
             {({ selected }) => (
@@ -49,25 +50,20 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
       >
         <div ref={tabPanelRef}>
           <AnimatePresence initial={false} custom={direction} mode="popLayout">
-            {tabItems.map(
-              ({ content }, index) =>
-                selectedIndex === index && (
-                  <TabPanel
-                    key={index}
-                    as={motion.div}
-                    variants={tabPanelVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    custom={direction}
-                    transition={{ type: "tween", duration: 0.5 }}
-                    className="max-h-min w-full"
-                    static // tells headless ui to delegate mount/unmount to us
-                  >
-                    {children(content)}
-                  </TabPanel>
-                ),
-            )}
+            <TabPanel
+              key={selectedIndex}
+              as={motion.div}
+              variants={tabPanelVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              custom={direction}
+              transition={{ type: "tween", duration: 0.5 }}
+              className="max-h-min w-full"
+              static // tells headless ui to delegate mount/unmount to us
+            >
+              {children(selectedTab.content)}
+            </TabPanel>
           </AnimatePresence>
         </div>
       </TabPanels>
@@ -78,7 +74,7 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
 function Background(props: React.ComponentProps<"div"> & MotionProps) {
   return (
     <motion.div
-      className="absolute inset-0 rounded-md bg-common-border"
+      className="absolute inset-0 rounded-md bg-common-border transition-[background-color] duration-500"
       {...props}
     ></motion.div>
   );

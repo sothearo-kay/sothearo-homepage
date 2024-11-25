@@ -27,7 +27,7 @@ export const ExperienceTabs: React.FC = () => {
 
 function TabContent({ content }: { content: contentType }) {
   return (
-    <div className="rounded-lg border border-gray-300 p-4 pb-0 dark:border-gray-700">
+    <div className="rounded-lg border border-gray-300 p-4 pb-0 transition-[border-color] duration-500 dark:border-gray-700">
       {content.map((experience, idx) => (
         <div key={idx} className="group relative">
           <div className="absolute rounded-full border-2 border-white bg-white group-[&:not(:first-child)]:mt-4">
@@ -41,7 +41,7 @@ function TabContent({ content }: { content: contentType }) {
           </div>
 
           {/* prettier-ignore */}
-          <div className="ml-5 border-l border-gray-300 py-4 pl-10 group-first:pt-0 dark:border-gray-700 [&>*:last-child]:mb-0">
+          <div className="ml-5 border-l border-gray-300 py-4 pl-10 group-first:pt-0 dark:border-gray-700 [&>*:last-child]:mb-0 transition-[border-color] duration-500">
             <time className="text-sm text-common-text">
               {experience.duration}
             </time>
@@ -66,7 +66,7 @@ function TabContent({ content }: { content: contentType }) {
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="group/link gap-2 rounded-md bg-panel-link-background px-2 py-0.5 text-background transition-colors duration-150 flex-center hover:text-panel-link-hover"
+                      className="group/link gap-2 rounded-md bg-panel-link-background px-2 py-0.5 text-background transition-[color,background-color] duration-[.15s,.5s] flex-center hover:text-panel-link-hover"
                     >
                       <span>{link.label}</span>
                       <Icons.ArrowRightUp className="h-4 w-4 transition-transform duration-150 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-1" />
