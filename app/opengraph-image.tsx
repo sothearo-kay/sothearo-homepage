@@ -16,7 +16,10 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        <img src={logoSrc as unknown as string} height="100" />
+        <img
+          src={logoSrc as unknown as string}
+          style={{ width: "100%", height: "auto" }}
+        />
       </div>
     ),
   );
