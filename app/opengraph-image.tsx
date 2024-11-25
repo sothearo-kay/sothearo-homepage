@@ -11,15 +11,13 @@ export default async function Image() {
     (
       <div
         style={{
+          width: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <img
-          src={logoSrc as unknown as string}
-          style={{ width: "100%", height: "auto" }}
-        />
+        <img src={logoSrc as unknown as string} height="100%" />
       </div>
     ),
   );
