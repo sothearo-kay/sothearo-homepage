@@ -14,7 +14,7 @@ export default async function Home() {
   );
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-12">
       {/* about me */}
       <div className="flex items-center gap-16 max-sm:flex-col">
         <div className="flex-1 max-sm:order-1">
