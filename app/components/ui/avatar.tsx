@@ -7,7 +7,7 @@ interface AvatarProps {
 
 export const Avatar: React.FC<AvatarProps> = ({ src, alt }) => {
   return (
-    <div className="overflow-hidden rounded-2xl ring-4 ring-common-bg ring-offset-4 ring-offset-background duration-500">
+    <div className="overflow-hidden rounded-2xl ring-4 ring-common-border ring-offset-4 ring-offset-background duration-500 max-sm:hidden">
       <Image
         src={src}
         alt={alt}

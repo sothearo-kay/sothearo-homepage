@@ -35,8 +35,8 @@ const MoonIcon = () => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       initial="hidden"
       animate="visible"
@@ -58,8 +58,8 @@ const SunIcon = () => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       initial="hidden"
       animate="visible"

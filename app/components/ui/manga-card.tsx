@@ -15,7 +15,7 @@ export const MangaCard: React.FC<MangaCardProps> = ({ title, cover }) => {
         width={180}
         height={240}
         priority
-        className="aspect-[3/4] w-full rounded-md object-cover shadow-card"
+        className="aspect-[3/4] w-full rounded-md object-fill shadow-card"
       />
       <CardTitle>{title}</CardTitle>
     </div>

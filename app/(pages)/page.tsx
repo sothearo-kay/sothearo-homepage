@@ -16,8 +16,8 @@ export default async function Home() {
   return (
     <div className="space-y-12">
       {/* about me */}
-      <div className="flex items-center gap-16 max-sm:flex-col">
-        <div className="flex-1 max-sm:order-1">
+      <div className="flex items-center gap-16">
+        <div className="flex-1">
           <h1 className="mb-5 font-mplus text-4xl font-bold capitalize">
             {bio.title}
           </h1>
@@ -33,7 +33,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <Avatar src="/images/avatar.jpg" alt="Sothearo's avatar" />
+        <Avatar src="/images/animate-avatar.jpg" alt="Sothearo's avatar" />
       </div>
 
       {/* work / education */}
