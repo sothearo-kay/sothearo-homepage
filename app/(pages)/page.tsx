@@ -1,7 +1,8 @@
-import { ExperienceTabs } from "@/app/components/ui/experience-tabs";
 import { ResumeLink } from "@/app/components/ui/resume-link";
 import { SocialLinks } from "@/app/components/ui/social-links";
 import { LongParagraph } from "@/app/components/ui/long-paragraph";
+import { ImageGallery } from "../components/ui/image-gallery";
+import { ExperienceTabs } from "@/app/components/ui/experience-tabs";
 import { Avatar } from "@/app/components/ui/avatar";
 import { Heading } from "@/app/components/ui/heading";
 import { RepoCard } from "@/app/components/ui/repo-card";
@@ -35,6 +36,9 @@ export default async function Home() {
           </div>
         </div>
       </div>
+
+      {/* image gallery */}
+      <ImageGallery />
 
       {/* work / education */}
       <ExperienceTabs />
