@@ -23,12 +23,6 @@ export default {
         "common-text": "var(--common-text)",
         "common-border": "var(--common-border)",
         "common-bg": "var(--common-bg)",
-        gray: {
-          200: "var(--gray-200)",
-          300: "var(--gray-300)",
-          700: "var(--gray-700)",
-          800: "var(--gray-800)",
-        },
       },
       fontFamily: {
         mplus: ["var(--font-m-plus)", "sans-serif"],
