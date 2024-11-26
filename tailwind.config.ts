@@ -33,7 +33,7 @@ export default {
       container: {
         center: true,
         screens: {
-          lg: "50rem",
+          lg: "48rem",
         },
       },
     },
