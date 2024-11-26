@@ -27,10 +27,10 @@ export const ExperienceTabs: React.FC = () => {
 
 function TabContent({ content }: { content: contentType }) {
   return (
-    <div className="rounded-lg border border-gray-300 p-4 pb-0 transition-[border-color] duration-500 dark:border-gray-700">
+    <div className="divide-y divide-dashed divide-common-border rounded-lg border border-gray-300 py-4 pb-0 transition-[border-color] duration-500 dark:border-gray-700">
       {content.map((experience, idx) => (
-        <div key={idx} className="group relative">
-          <div className="absolute rounded-full border-2 border-white bg-white group-[&:not(:first-child)]:mt-4">
+        <div key={idx} className="group relative ml-9 pr-4">
+          <div className="absolute -translate-x-1/2 rounded-full border-2 border-white bg-white group-[&:not(:first-child)]:mt-4">
             <Image
               src={experience.logo}
               alt={experience.organization}
@@ -41,7 +41,7 @@ function TabContent({ content }: { content: contentType }) {
           </div>
 
           {/* prettier-ignore */}
-          <div className="ml-5 border-l border-gray-300 py-4 pl-10 group-first:pt-0 dark:border-gray-700 [&>*:last-child]:mb-0 transition-[border-color] duration-500">
+          <div className="border-l border-gray-300 py-4 pl-10 group-first:pt-0 dark:border-gray-700 [&>*:last-child]:mb-0 transition-[border-color] duration-500">
             <time className="text-sm text-common-text">
               {experience.duration}
             </time>

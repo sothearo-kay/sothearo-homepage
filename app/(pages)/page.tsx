@@ -16,7 +16,7 @@ export default async function Home() {
   return (
     <div className="space-y-12">
       {/* about me */}
-      <div className="flex items-center gap-16">
+      <div className="flex items-center gap-x-16 gap-y-12 max-sm:flex-col">
         <div className="flex-1">
           <h1 className="mb-5 font-mplus text-4xl font-bold capitalize">
             {bio.title}
