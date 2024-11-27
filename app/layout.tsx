@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     url: "https://sothearo.dev",
     siteName: "Sothearo - Homepage",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

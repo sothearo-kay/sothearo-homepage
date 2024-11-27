@@ -18,6 +18,7 @@ export default function Projects() {
   return (
     <div className="space-y-12">
       <Heading>Projects</Heading>
+
       <div className="grid grid-cols-2 gap-6 max-sm:grid-cols-1">
         {projectList.map((project, idx) => (
           <ProjectCard
