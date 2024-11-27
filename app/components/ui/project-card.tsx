@@ -20,12 +20,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <Image
           src={cover}
           alt={title}
-          placeholder="blur"
           className="aspect-video w-full rounded shadow-card"
         />
-        <div className="transition-colors duration-150 flex-between group-hover:text-card-link-hover">
+        <div className="flex-between group-hover:text-card-link-hover group-hover:transition-colors">
           <CardTitle>{title}</CardTitle>
-          <Icons.ArrowRightUp className="mr-2.5 h-4 w-4 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-1" />
+          <Icons.ArrowRightUp className="mr-2.5 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" />
         </div>
       </div>
     </ExternalLink>

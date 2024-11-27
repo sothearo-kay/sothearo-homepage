@@ -13,7 +13,7 @@ export const RepoCard: React.FC<RepoCardProps> = ({ repository }) => {
 
   return (
     <ExternalLink href={repository.url} className="flex">
-      <div className="flex-1 rounded-lg border border-common-border p-4 transition-colors duration-150 hover:bg-common-bg">
+      <div className="flex-1 rounded-lg border border-common-border p-4 transition-[background-color,border-color] duration-[.15s,.5s] hover:bg-common-bg">
         <div className="flex-between">
           <CardTitle>{repository.title}</CardTitle>
 

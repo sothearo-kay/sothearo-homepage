@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${Mplus.variable} antialiased transition-colors duration-500`}
+        className={`${Mplus.variable} antialiased transition-[color,background-color] duration-500`}
       >
         <ThemeProvider attribute="class">
           <Header />

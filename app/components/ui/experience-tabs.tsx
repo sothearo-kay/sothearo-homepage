@@ -27,7 +27,7 @@ export const ExperienceTabs: React.FC = () => {
 
 function TabContent({ content }: { content: contentType }) {
   return (
-    <div className="divide-y divide-dashed divide-common-border rounded-lg border border-common-border py-4 pb-0 transition-[border-color] duration-500">
+    <div className="divide-y divide-dashed divide-common-border rounded-lg border border-common-border py-4 pb-0 transition-[border-color] duration-500 [&>*]:transition-[border-color] [&>*]:duration-500">
       {content.map((experience, idx) => (
         <div key={idx} className="group relative ml-9 pr-4">
           <div className="absolute -translate-x-1/2 rounded-full border-2 border-white bg-white group-[&:not(:first-child)]:mt-4">
@@ -69,7 +69,7 @@ function TabContent({ content }: { content: contentType }) {
                       className="group/link gap-2 rounded-md bg-panel-link-background px-2 py-0.5 text-background transition-[color,background-color] duration-[.15s,.5s] flex-center hover:text-panel-link-hover"
                     >
                       <span>{link.label}</span>
-                      <Icons.ArrowRightUp className="h-4 w-4 transition-transform duration-150 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-1" />
+                      <Icons.ArrowRightUp className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-1" />
                     </Link>
                   </li>
                 ))}

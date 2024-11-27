@@ -30,7 +30,7 @@ export const BaseTabs = <T,>({ tabItems, children }: TabsProps<T>) => {
           <Tab key={name} as={Fragment}>
             {({ selected }) => (
               <button
-                className={`${!selected ? "hover:bg-[#fffa] dark:hover:bg-[#000a]" : ""} relative rounded-md py-2 font-medium transition-[background-color] duration-150 flex-center focus:outline-none`}
+                className={`${!selected ? "hover:bg-[#fffa] dark:hover:bg-[#000a]" : ""} relative rounded-md py-2 font-medium transition-[background-color] flex-center focus:outline-none`}
               >
                 <span className="relative z-10 font-mplus font-medium">
                   {name}

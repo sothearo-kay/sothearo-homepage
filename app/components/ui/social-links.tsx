@@ -16,7 +16,7 @@ export const SocialLinks: React.FC = () => {
       {socialLinks.map((link, idx) => (
         <li key={idx} className="relative" onMouseEnter={() => setFocused(idx)}>
           <ExternalLink href={link.url} aria-label={link.label}>
-            <span className="h-11 w-11 rounded-full border border-dashed border-transparent transition-[border-color] duration-150 flex-center hover:border-foreground">
+            <span className="h-11 w-11 rounded-full border border-dashed border-transparent transition-[border-color] flex-center hover:border-foreground">
               {link.icon}
             </span>
           </ExternalLink>
