@@ -16,7 +16,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <ExternalLink href={link} className="flex">
-      <div className="group flex-1 space-y-2 rounded-lg border border-common-border p-4">
+      <div className="group flex-1 space-y-2 rounded-lg border border-common-border p-4 transition-[border-color] duration-500">
         <Image
           src={cover}
           alt={title}
