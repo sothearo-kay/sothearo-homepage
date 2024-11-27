@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import * as Icons from "@/app/components/icons";
 import { BaseTabs } from "@/app/components/common/base-tabs";
+
+import tscLogo from "@/public/logos/tsc.png";
+import ruppLogo from "@/public/logos/rupp.png";
+import spsLogo from "@/public/logos/sps.png";
 
 interface ExperienceEntry {
   duration: string;
   organization: string;
-  logo: string;
+  logo: string | StaticImageData;
   position?: string;
   description?: string;
   highlights?: string[];
@@ -89,7 +93,7 @@ const experiences = [
       {
         duration: "Sep 2024 - Present",
         organization: "Techo Startup Center",
-        logo: "/logos/tsc.png",
+        logo: tscLogo,
         position: "Frontend Developer",
       },
     ],
@@ -100,7 +104,7 @@ const experiences = [
       {
         duration: "Oct 2019 - June 2023",
         organization: "Royal University of Phnom Penh",
-        logo: "/logos/rupp.png",
+        logo: ruppLogo,
         position: "BS of Computer Science",
         links: [
           {
@@ -116,7 +120,7 @@ const experiences = [
       {
         duration: "Aug 2016 - Sep 2019",
         organization: "Sovannaphumi School",
-        logo: "/logos/sps.png",
+        logo: spsLogo,
         position: "High School Diploma",
         highlights: ["Enjoy solving hard problems in math"],
       },
