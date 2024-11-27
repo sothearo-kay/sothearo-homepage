@@ -17,7 +17,7 @@ export default function Manga() {
           <MangaCard
             key={idx}
             title={manga.title}
-            cover={`/api/proxy/covers/${manga.coverId}`}
+            cover={`https://mangadex.org/covers/${manga.coverId}`}
           />
         ))}
       </div>
