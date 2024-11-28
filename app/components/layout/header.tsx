@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
   const opacity = useTransform(scrollY, [0, 100], [0, 1]);
 
   return (
-    <header className="sticky top-0 z-10 font-mplus">
+    <header className="sticky top-0 z-10">
       <Mask opacity={opacity} />
 
       <div className="container relative z-[1] flex items-center py-5">

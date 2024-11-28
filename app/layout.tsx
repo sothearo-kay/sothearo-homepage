@@ -9,7 +9,7 @@ import { PageTransition } from "./components/layout/page-transition";
 import "./globals.css";
 
 const Mplus = M_PLUS_Rounded_1c({
-  weight: ["400", "500", "700"],
+  weight: ["500", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-m-plus",

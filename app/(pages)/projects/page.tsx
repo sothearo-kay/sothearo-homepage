@@ -24,24 +24,26 @@ export const metadata: Metadata = {
 
 export default function Projects() {
   return (
-    <div className="space-y-12">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Heading>Projects</Heading>
+      <div className="space-y-12">
+        <Heading>Projects</Heading>
 
-      <div className="grid grid-cols-2 gap-6 max-sm:grid-cols-1">
-        {projectList.map((project, idx) => (
-          <ProjectCard
-            key={idx}
-            title={project.title}
-            cover={project.cover}
-            link={`${GITHUB_BASE_URL}${project.repoId}`}
-          />
-        ))}
+        <div className="grid grid-cols-2 gap-6 max-sm:grid-cols-1">
+          {projectList.map((project, idx) => (
+            <ProjectCard
+              key={idx}
+              title={project.title}
+              cover={project.cover}
+              link={`${GITHUB_BASE_URL}${project.repoId}`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
