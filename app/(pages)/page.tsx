@@ -7,7 +7,17 @@ import { RepoCard } from "../components/ui/repo-card";
 import { SeeMoreLink } from "../components/ui/seemore-link";
 import { fetchRepository } from "../utils/fetch";
 
+import bio from "../d/bio.json";
+import featureProjects from "../d/feature-projects.json";
 import avatarImage from "@/public/images/animate-avatar.jpg";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Sothearo - Homepage",
+  url: "https://sothearo.dev",
+  description: `Discover my portfolio, an engaging showcase of my projects alongside the incredible manga that inspires my creativity and passion for storytelling.`,
+};
 
 export default async function Home() {
   const repositories = await Promise.all(
@@ -16,6 +26,11 @@ export default async function Home() {
 
   return (
     <div className="space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* about me */}
       <div className="flex items-center gap-x-16 max-sm:block">
         <Avatar src={avatarImage} alt="Sothearo's avatar" />
@@ -57,14 +72,3 @@ export default async function Home() {
     </div>
   );
 }
-
-const bio = {
-  title: "kay sothearo",
-  subtitle: "A frontend developer based in Phnom Penh",
-  description: `I am passionate about reading, especially graphic novels such as manga and manhwa. I find great joy in coding, embracing the challenge of creating intricate user interfaces, and I thrive on learning through insightful articles.`,
-};
-
-const featureProjects = [
-  { title: "Netflix Clone", repoId: "netflix-clone" },
-  { title: "Checkout Cart", repoId: "checkout-cart" },
-];
