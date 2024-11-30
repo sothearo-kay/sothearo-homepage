@@ -10,6 +10,7 @@ export default {
   ],
   theme: {
     colors: {
+      white: "white",
       transparent: "transparent",
       background: "var(--background)",
       foreground: "var(--foreground)",
