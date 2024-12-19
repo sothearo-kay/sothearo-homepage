@@ -27,6 +27,7 @@ function TabContent({ content }: { content: contentType }) {
               alt={experience.organization}
               width={40}
               height={40}
+              priority
               className="aspect-square"
             />
           </div>
