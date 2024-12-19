@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { M_PLUS_Rounded_1c } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "./components/layout/header";
 import { Footer } from "./components/layout/footer";
 import { PageTransition } from "./components/layout/page-transition";
@@ -52,9 +50,6 @@ export default function RootLayout({
           </PageTransition>
           <Footer />
         </ThemeProvider>
-
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
